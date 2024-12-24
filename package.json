@@ -4,7 +4,7 @@
   "main": "whatsapp_bot.js",
   "dependencies": {
     "node-fetch": "^2.6.7",
-    "puppeteer": "^19.0.0",  // Use puppeteer (not puppeteer-core)
+    "puppeteer": "^19.0.0",  
     "whatsapp-web.js": "^1.15.0",
     "mongodb": "^5.4.0",
     "telegraf": "^4.7.0",
