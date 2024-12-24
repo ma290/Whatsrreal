@@ -1,5 +1,13 @@
-# Use official Node.js image as a base
-FROM node:16-slim
+# Use a Node.js image
+FROM node:18
+
+# Install Chromium
+RUN apt-get update && apt-get install -y \
+    chromium \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the necessary environment variable for Puppeteer to know the location of Chromium
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -8,11 +16,11 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 
-# Copy all files
+# Copy the rest of your application
 COPY . .
 
-# Expose the port
-EXPOSE 3000
+# Expose the app port (adjust this if needed)
+EXPOSE 8080
 
-# Run the bot
+# Start the app
 CMD ["npm", "start"]
