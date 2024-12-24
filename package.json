@@ -1,16 +1,16 @@
 {
   "name": "whatsapp-bot",
   "version": "1.0.0",
-  "description": "WhatsApp bot to handle file and message sending",
-  "main": "index.js",
+  "main": "whatsapp_bot.js",
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "puppeteer": "^19.0.0",  // Use puppeteer (not puppeteer-core)
+    "whatsapp-web.js": "^1.15.0",
+    "mongodb": "^5.4.0",
+    "telegraf": "^4.7.0",
+    "qrcode-terminal": "^0.12.0"
+  },
   "scripts": {
     "start": "node whatsapp_bot.js"
-  },
-  "dependencies": {
-    "whatsapp-web.js": "^1.0.0",
-    "qrcode-terminal": "^0.12.0",
-    "mongodb": "^4.3.0"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
